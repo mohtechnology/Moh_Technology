@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Courses - Moh Technology{% endblock %}
+{% block url %}
+
+<style>
+    .card {
+        background: #101010;
+        color: white;
+    }
+
+    .card-body p {
+        margin-bottom: 40px;
+        font-weight: 500;
+    }
+
+    .btn {
+        background-color: #4CAF50;
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        font-weight: 600;
+
+    }
+
+    @media (max-width: 768px) {
+        .d-flex {
+            flex-direction: column;
+        }
+
+        .contain {
+            padding: 0px;
+            margin: 0px;
+            align-items: center;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Courses We Offer</h1>
+<div class="contain text-dark d-flex">
+    <div class="card m-3" style="width: 18rem;">
+        <img src="{{url_for('static', filename='images/html.webp')}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><b>Web Development</b></h5>
+            <p class="card-text">This Website development course will teach you about how to create a website from
+                scratch.</p>
+            <a href="https://www.youtube.com/playlist?list=PLtjl3y2jZEeUMDal14Pqe9hyIapehatsb"
+                class="btn btn-success">Access Course</a>
+        </div>
+    </div>
+    <div class="card m-3" style="width: 18rem;">
+        <img src="{{url_for('static', filename='images/js.png')}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><b>JavaScript</b></h5>
+            <p class="card-text">Dive into the world of JavaScript with our easy-to-follow tutorials, perfect for
+                beginners and seasoned developers alike.</p>
+            <a href="https://www.youtube.com/playlist?list=PLtjl3y2jZEeXVsvnbZOEikBnQwk0a60PZ"
+                class="btn btn-success">Access Course</a>
+        </div>
+    </div>
+    <div class="card m-3" style="width: 18rem;">
+        <img src="{{url_for('static', filename='images/basic.png')}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><b>Basics Of Coding</b></h5>
+            <p class="card-text">Start your coding journey with our comprehensive "Basics of Coding" series. We cover
+                fundamental programming concepts to help you build a strong foundation.</p>
+            <a href="https://www.youtube.com/playlist?list=PLtjl3y2jZEeW81Wilil_i26X05txSeGWl"
+                class="btn btn-success">Access Course</a>
+        </div>
+    </div>
+</div>
+<div class="contain text-dark d-flex">
+    <div class="card m-3" style="width: 18rem;">
+        <img src="{{url_for('static', filename='images/python.png')}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><b>Python</b></h5>
+            <p class="card-text">Explore the power of Python with our detailed tutorials, designed for both beginners
+                and experienced programmers. Learn everything from basic syntax and data structures to advanced topics
+                like web development and data analysis.</p>
+            <a href="https://www.youtube.com/playlist?list=PLtjl3y2jZEeW6uk1iJxwLCOrx0NBYsY9e"
+                class="btn btn-success">Access Course</a>
+        </div>
+    </div>
+    <div class="card m-3" style="width: 18rem;">
+        <img src="{{url_for('static', filename='images/workshop.png')}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><b>Python Workshop</b></h5>
+            <p class="card-text">Participate in live classes where you can interact with the instructor in real-time,
+                ask questions, and get hands-on experience with Python programming.</p>
+            <a href="https://www.youtube.com/playlist?list=PLtjl3y2jZEeXOpQdxI9z-9CfO9ld2CMVn"
+                class="btn btn-success">Access Course</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Home - Moh Technology{% endblock %}
+{% block url %}
+<style>
+    .video {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* 16:9 aspect ratio */
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+        margin: 20px 0;
+    }
+
+    .video iframe {
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1 {% if not logedin %} style="display: none;" {% endif %} style="color: #1BFC06;">Loged in Successfully</h1>
+<h1>Welcome to Moh Technology</h1>
+<h2 style="text-align: center;">Learn <span id="element"></span></h2>
+<h2>About Us</h2>
+<p>Welcome to Moh Technology, your go-to destination for mastering programming through captivating animated
+    tutorials! Dive into the world of coding with our engaging videos designed to demystify complex concepts
+    and empower learners of all levels.</p>
+
+<h2>What We Teach</h2>
+<p>At Moh Technology, we cover a range of programming languages and topics, including Python, HTML, CSS, and
+    JavaScript. Our tutorials are perfect for both beginners and experienced developers looking to enhance
+    their skills.</p>
+
+    <h2>Latest Video</h2>
+<div class="video">
+    <iframe width="950" src="https://www.youtube.com/embed/eU7WoKClAhQ" frameborder="0" allowfullscreen
+        style="margin: 20px;"></iframe>
+</div>
+
+<h2>Join Our Community</h2>
+<p>Subscribe to Moh Technology on YouTube to stay updated with our latest tutorials. Join our vibrant
+    community of learners, ask questions, and share your projects with us!</p>
+{% endblock %}
+
+{% block script %}
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('#element', {
+        strings: ['Web Development', 'HTML', 'CSS', 'JavaScript', 'Python', 'And Many More...'],
+        typeSpeed: 80,
+    });
+</script>
+{% endblock %}

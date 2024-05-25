@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Login - Moh Technology{% endblock %}
+{% block url %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="{{url_for('static',filename='css/signup.css')}}">
+{% endblock %}
+
+{% block content %}
+<h1>Login To Moh Technology</h1>
+<div class="container">
+    <form action="/login" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label text-white">Username</label>
+            <input type="text" class="form-control" id="username" name="username" minlength="6" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label text-white">Password</label>
+            <input type="password" class="form-control" id="password" name="password" minlength="6" required>
+            <span {% if not login %} style="display: none;"{% endif %} style="color: red; margin-top: 7px;">Check Your Password Or Username</span>
+            <br>
+            <label for="checkbox" style="display: flex; align-items: center;">
+                <input type="checkbox" id="checkbox" style="height: 18px; width: 18px; margin-right: 10px;"
+                    onclick="hello()"> Show Password
+            </label>
+        </div>
+        <button type="submit" style="background-color: #4CAF50;" class="btn btn-success">Login</button>
+    </form>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+    function hello() {
+        var x = document.getElementById("password");
+        console.log(x)
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+
+    }
+</script>
+{% endblock %}
